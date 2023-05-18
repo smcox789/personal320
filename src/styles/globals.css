@@ -1,0 +1,221 @@
+body {
+  background-color: #1491cb;
+}
+
+.box {
+  border-radius: 25px;
+  border: 3px solid black;
+  color: white;
+}
+
+table {
+  border-collapse: collapse;
+}
+
+.title_box {
+  left: 20%;
+  top: 10%;
+  width: 60%;
+  position: fixed;
+  background-color: white;
+  padding-left: 20px;
+  padding-right: 20px;
+  padding-top: 2%;
+  padding-bottom: 2%;
+}
+
+.field_box {
+  background-color: #f446e3;
+  border-radius: 25px;
+  padding-left: 10px;
+  padding-right: 10px;
+  padding-bottom: min(1vh, 0.3vw);
+}
+
+.bullet {
+  background-color: white;
+  height: min(5vh, 2vw);
+  width: min(5vh, 2vw);
+  border-radius: 50%;
+  position: fixed;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.inner_ellipse {
+  background-color: #aa1ab7;
+  height: min(4vh, 1vw);
+  width: min(4vh, 1vw);
+  border-radius: 50%;
+  position: fixed;
+}
+
+#fname_box {
+  left: 5vw;
+  bottom: 60vh;
+  position: fixed;
+}
+
+#lname_box {
+  left: 65vw;
+  bottom: 60vh;
+  position: fixed;
+}
+
+#email_box {
+  left: 5vw;
+  bottom: 38vh;
+  position: fixed;
+}
+
+#YoG_box {
+  left: 65vw;
+  bottom: 38vh;
+  position: fixed;
+}
+
+#previous_box {
+  left: 5vw;
+  bottom: 16vh;
+  position: fixed;
+}
+
+#previous_grade {
+  left: 65vw;
+  bottom: 16vh;
+  position: fixed;
+}
+
+#submit_button_container {
+  text-align: center;
+  top: 85vh;
+  left: 45vw;
+  position: fixed;
+}
+
+#fname_bullet {
+  left: 2vw;
+  top: 41.5vh;
+}
+
+#lname_bullet {
+  left: 62vw;
+  top: 41.5vh;
+}
+
+#email_bullet {
+  left: 2vw;
+  top: 63.5vh;
+}
+
+#YoG_bullet {
+  left: 62vw;
+  top: 63.5vh;
+}
+
+#previously_taken_bullet {
+  left: 2vw;
+  top: 85.5vh;
+}
+
+#previous_grade_bullet {
+  left: 62vw;
+  top: 85.5vh;
+}
+
+.field_box_text {
+  color: white;
+  font-size: min(5.5vh, 2.5vw);
+}
+
+.title_box_text {
+  text-align: center;
+  font-size: max(5vmin, 15px);
+  color: black;
+  font-style: "Plex Sans";
+  font-weight: bold;
+}
+
+.text-input {
+  position: fixed;
+  height: 6vh;
+  width: 30vw;
+  stroke: 5px;
+  font-size: min(5.5vh, 2.5vw);
+  border-radius: 10px;
+}
+
+.checkbox {
+  position: fixed;
+  height: 6vh;
+  width: 6vh;
+  padding-right: 6vh;
+  padding-top: 6vh;
+  border-radius: 30px;
+}
+
+#fname {
+  left: 5vw;
+  top: 40.5vh;
+}
+
+#lname {
+  left: 65vw;
+  top: 40.5vh;
+}
+
+#email {
+  left: 5vw;
+  top: 62.5vh;
+}
+
+#YoG {
+  left: 65vw;
+  top: 62.5vh;
+}
+
+#checkbox {
+  left: 5vw;
+  top: 84.5vh;
+}
+
+#grade {
+  position: fixed;
+  width: 10vw;
+  height: 6vw;
+  border-radius: 10px;
+  stroke: 10px;
+  left: 65vw;
+  top: 84.5vh;
+  font-size: min(6.5vh, 3.5vw);
+}
+
+#submit {
+  height: 7vh;
+  background-color: #f446e3;
+  border-radius: 25px;
+  width: 10vw;
+}
+
+#submit:hover {
+  background-color: #ffb6c1;
+}
+
+#submit:active {
+  background-color: purple;
+}
+
+input {
+  font-size: 5vh;
+}
+
+.error_message {
+  position: fixed;
+  top: 95vh;
+  text-align: center;
+}
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
