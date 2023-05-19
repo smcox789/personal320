@@ -1,35 +1,37 @@
-import * as React from 'react'
+import React from 'react'
 import { render, fireEvent, waitFor } from "@testing-library/react"
-import Home from "@/pages/index"
+import index from "@/pages"
+import { handleSubmit } from "@/pages/index"
 import { useRouter } from "next/router"
 import router from "next/dist/server/router"
+import signin from "@/lib/api"
 
 // Mock the API functions used in the component
-jest.mock("../../services/apiLogin", () => ({
-  login: jest.fn(),
+jest.mock("@/lib/api", () => ({
+  signin: jest.fn(),
 }))
 
 //  the useRouter hook
-jest.mock("next/router", () => ({
-  useRouter: () => ({
-    push: jest.fn().mockResolvedValueOnce("default"),
-    reload: jest.fn(),
-  }),
-}))
+// jest.mock("next/router", () => ({
+//   useRouter: () => ({
+//     push: jest.fn().mockResolvedValueOnce("default"),
+//     reload: jest.fn(),
+//   }),
+// }))
 
 describe("Login", () => {
   it("submits the login form and redirects to the appropriate dashboard", async () => {
-    const { getByLabelText, getByText } = render(<Home/>)
-
-    const usernameInput = getByLabelText("Username")
-    const passwordInput = getByLabelText("Password")
+    
+    const { getByLabelText, getByText } = render(<index/>)
+    const usernameInput = getByLabelText("username")
+    const passwordInput = getByLabelText("password")
     const loginButton = getByText("Login")
 
     const fakeAccessToken = "fake-access-token"
     const fakeIsStudent = true
 
     // Mock the successful login response
-    Login.mockResolvedValueOnce({
+    signin.mockResolvedValueOnce({
       access_token: fakeAccessToken,
       isStudent: fakeIsStudent,
     })
@@ -39,7 +41,7 @@ describe("Login", () => {
     fireEvent.click(loginButton)
 
     await waitFor(() => {
-      expect(Home).toHaveBeenCalledWith({
+      expect().toHaveBeenCalledWith({
         email: "testuser",
         password: "testpassword",
       })
